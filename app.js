@@ -69,16 +69,16 @@ app.use(indexRoutes);
 app.use("/campgrounds/:id/comments", commentsRoutes);
 app.use("/campgrounds",campgroundRoutes);
 
-// const PORT = process.env.PORT || 3000;
-// app.listen(PORT, () => {
-//     console.log(`Our app is running on port ${ PORT }`);
-// });
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
 
 // var port = process.env.PORT || 3000;
 // app.listen(port, function () {
 //   console.log("Server Has Started!");
 // });
 
-app.listen(3000,function(){
-    console.log(" The YelpCamp Server is UP !! ");
-});
+// app.listen(3000,function(){
+//     console.log(" The YelpCamp Server is UP !! ");
+// });
