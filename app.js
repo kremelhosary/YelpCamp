@@ -18,7 +18,19 @@ var commentsRoutes = require("./routes/comment"),
     indexRoutes = require("./routes/index");
 
 // seedDB();
-mongoose.connect("mongodb://localhost:27017/yelp_camp",{useNewUrlParser: true});
+//mongoose.connect("mongodb://localhost:27017/yelp_camp",{useNewUrlParser: true});
+
+mongoose.connect("mongodb+srv://kremkamal:Highspeedlowdrag@22@cluster0-in4r6.mongodb.net/test?retryWrites=true&w=majority",
+    {
+        useNewUrlParser: true,
+        useCreateIndex: true
+    }).then(()=> {
+        console.log('connected to db');
+    }).catch(err => {
+        console.log(err.message);
+    });
+
+// mongodb+srv://<kremkmal>:<Highspeedlowdrag@22>@cluster0-in4r6.mongodb.net/test?retryWrites=true&w=majority
 
 app.use(bodyparser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
