@@ -33,6 +33,8 @@ mongoose.connect("mongodb+srv://kremkamal:Highspeedlowdrag@22@cluster0-in4r6.mon
 
 // mongodb+srv://<kremkmal>:<Highspeedlowdrag@22>@cluster0-in4r6.mongodb.net/test?retryWrites=true&w=majority
 
+mongoose.set('useFindAndModify', false);
+
 app.use(bodyparser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
 app.use(express.static( __dirname + "/public"));
@@ -67,16 +69,16 @@ app.use(indexRoutes);
 app.use("/campgrounds/:id/comments", commentsRoutes);
 app.use("/campgrounds",campgroundRoutes);
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Our app is running on port ${ PORT }`);
-});
+// const PORT = process.env.PORT || 3000;
+// app.listen(PORT, () => {
+//     console.log(`Our app is running on port ${ PORT }`);
+// });
 
 // var port = process.env.PORT || 3000;
 // app.listen(port, function () {
 //   console.log("Server Has Started!");
 // });
 
-// app.listen(3000,function(){
-//     console.log(" The YelpCamp Server is UP !! ");
-// });
+app.listen(3000,function(){
+    console.log(" The YelpCamp Server is UP !! ");
+});
