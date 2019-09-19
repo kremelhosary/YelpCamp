@@ -24,7 +24,8 @@ var commentsRoutes = require("./routes/comment"),
 mongoose.connect("mongodb+srv://kremkamal:Highspeedlowdrag@22@cluster0-in4r6.mongodb.net/test?retryWrites=true&w=majority",
     {
         useNewUrlParser: true,
-        useCreateIndex: true
+        useCreateIndex: true,
+        useUnifiedTopology: true
     }).then(()=> {
         console.log('connected to db');
     }).catch(err => {
