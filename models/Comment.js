@@ -2,6 +2,7 @@ var mongoose = require("mongoose");
  
 /// comments SCHEMA setup
 
+
 var commentSchema = new mongoose.Schema({
     text: String,
     author: {
