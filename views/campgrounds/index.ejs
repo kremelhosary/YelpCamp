@@ -1,0 +1,36 @@
+<% include ../partials/header %>
+
+
+<div class="container">    
+    <header class="jumbotron"> 
+       
+        <h1><i class="fas fa-campground"></i> Welcome To YelpCamp</h1>
+        <h5>  View of some of campgrounds in abuhamar</h5>
+        <p>
+            <a href="/campgrounds/new" class="btn btn-lg btn-primary">add new campground</a>
+        </p>
+    
+    </header>
+
+
+    <div class="row text-center" style="display: flex; flex-wrap: wrap; " >
+       
+        <% camplist.forEach(function(camp){  %>
+            <div class="col-md-4 col-sm-6">
+                <div class="card thumbnail">
+                        <img class="img-thumbnail" src=" <%= camp.image %> " >
+                        <div class="caption">
+                            <h6> <%= camp.name %> </h6>
+                        </div>
+                        <a href="/campgrounds/<%= camp._id %>" class="btn btn-primary btn-sm">More Info</a>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+
+
+
+</div>
+
+<% include ../partials/footer %>
