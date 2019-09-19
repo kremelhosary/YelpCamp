@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router({ mergeParams: true });
 var CampGround = require("../models/campground");
-var Comment    = require("../models/comment");
+var Comment    = require("../models/Comment");
 var middleware = require("../middleware")
 
 //   New Route

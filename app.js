@@ -3,7 +3,7 @@ var express        = require("express"),
     bodyparser     = require("body-parser"),
     mongoose       = require("mongoose"),
     CampGround     = require("./models/campground"),
-    Comment        = require("./models/comment"),
+    Comment        = require("./models/Comment"),
     flash          = require("connect-flash")
     passport       = require("passport"),
     LocalStrategy  = require("passport-local"),
@@ -75,11 +75,11 @@ app.use("/campgrounds",campgroundRoutes);
 //     console.log(`Our app is running on port ${ PORT }`);
 // });
 
-// var port = process.env.PORT || 3000;
-// app.listen(port, function () {
-//   console.log("Server Has Started!");
-// });
-
-app.listen(3000,function(){
-    console.log(" The YelpCamp Server is UP !! ");
+var port = process.env.PORT || 3000;
+app.listen(port, function () {
+  console.log("Server Has Started!");
 });
+
+// app.listen(3000,function(){
+//     console.log(" The YelpCamp Server is UP !! ");
+// });

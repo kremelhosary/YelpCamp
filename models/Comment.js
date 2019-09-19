@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
  
-/// comments SCHEMA setup
+/// comment SCHEMA setup
 
 
 var commentSchema = new mongoose.Schema({
