@@ -3,7 +3,7 @@ var express        = require("express"),
     bodyparser     = require("body-parser"),
     mongoose       = require("mongoose"),
     CampGround     = require("./models/campground"),
-    Comment        = require("./models/comment"),
+    Comment        = require("./models/Comment"),
     flash          = require("connect-flash")
     passport       = require("passport"),
     LocalStrategy  = require("passport-local"),
@@ -19,7 +19,13 @@ var commentsRoutes = require("./routes/comments"),
 
 // seedDB();
 
-//mongoose.connect("mongodb://localhost:27017/yelp_camp",{useNewUrlParser: true});
+// mongoose.connect("mongodb://localhost:27017/yelp_camp",
+//     {
+//         useNewUrlParser: true,
+//         useUnifiedTopology: true
+//     },function(){
+//         console.log("connected to local db");
+//     });
 
 mongoose.connect("mongodb+srv://kremkamal:Highspeedlowdrag@22@cluster0-in4r6.mongodb.net/test?retryWrites=true&w=majority",
     {
@@ -32,7 +38,7 @@ mongoose.connect("mongodb+srv://kremkamal:Highspeedlowdrag@22@cluster0-in4r6.mon
         console.log(err.message);
     });
 
-// mongodb+srv://<kremkmal>:<Highspeedlowdrag@22>@cluster0-in4r6.mongodb.net/test?retryWrites=true&w=majority
+// mongodb+srv://kremkamal:highspeedlowdrag@cluster0-in4r6.mongodb.net/test?retryWrites=true&w=majority
 
 mongoose.set('useFindAndModify', false);
 
