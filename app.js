@@ -23,21 +23,12 @@ var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v10";
 mongoose.connect(url,
     {
         useNewUrlParser: true,
+        useUnifiedTopology: true,
         useUnifiedTopology: true
     },function(){
         console.log("connected to local db");
-    });
+});
 
-// mongoose.connect("mongodb+srv://kremkamal:Highspeedlowdrag@22@cluster0-in4r6.mongodb.net/test?retryWrites=true&w=majority",
-//     {
-//         useNewUrlParser: true,
-//         useCreateIndex: true,
-//         useUnifiedTopology: true
-//     }).then(()=> {
-//         console.log('connected to db');
-//     }).catch(err => {
-//         console.log(err.message);
-//     });
 
 mongoose.set('useFindAndModify', false);
 
@@ -80,7 +71,3 @@ var port = process.env.PORT || 3000;
 app.listen(port, function () {
   console.log("Server Has Started!");
 });
-
-// app.listen(3000,function(){
-//     console.log(" The YelpCamp Server is UP !! ");
-// });
