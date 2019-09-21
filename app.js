@@ -18,27 +18,26 @@ var commentsRoutes = require("./routes/comments"),
     indexRoutes = require("./routes/index");
 
 // seedDB();
+var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v10";
 
-// mongoose.connect("mongodb://localhost:27017/yelp_camp",
-//     {
-//         useNewUrlParser: true,
-//         useUnifiedTopology: true
-//     },function(){
-//         console.log("connected to local db");
-//     });
-
-mongoose.connect("mongodb+srv://kremkamal:Highspeedlowdrag@22@cluster0-in4r6.mongodb.net/test?retryWrites=true&w=majority",
+mongoose.connect(url,
     {
         useNewUrlParser: true,
-        useCreateIndex: true,
         useUnifiedTopology: true
-    }).then(()=> {
-        console.log('connected to db');
-    }).catch(err => {
-        console.log(err.message);
+    },function(){
+        console.log("connected to local db");
     });
 
-// mongodb+srv://kremkamal:highspeedlowdrag@cluster0-in4r6.mongodb.net/test?retryWrites=true&w=majority
+// mongoose.connect("mongodb+srv://kremkamal:Highspeedlowdrag@22@cluster0-in4r6.mongodb.net/test?retryWrites=true&w=majority",
+//     {
+//         useNewUrlParser: true,
+//         useCreateIndex: true,
+//         useUnifiedTopology: true
+//     }).then(()=> {
+//         console.log('connected to db');
+//     }).catch(err => {
+//         console.log(err.message);
+//     });
 
 mongoose.set('useFindAndModify', false);
 
@@ -76,10 +75,6 @@ app.use(indexRoutes);
 app.use("/campgrounds/:id/comments", commentsRoutes);
 app.use("/campgrounds",campgroundRoutes);
 
-// const PORT = process.env.PORT || 3000;
-// app.listen(PORT, () => {
-//     console.log(`Our app is running on port ${ PORT }`);
-// });
 
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
