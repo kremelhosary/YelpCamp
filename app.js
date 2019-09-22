@@ -18,7 +18,7 @@ var commentsRoutes = require("./routes/comments"),
     indexRoutes = require("./routes/index");
 
 // seedDB();
-var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v10";
+var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp";
 
 mongoose.connect(url,
     {
